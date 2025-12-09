@@ -1,13 +1,36 @@
-# DriveGuardian-AI
+# 🚗 DriveGuardian-AI
 
 Python-based driver authentication and drowsiness detection for safer driving. Runs as a CLI or Streamlit app using OpenCV LBPH face recognition, Haar cascades for eye detection, and email alerts.
 
-## Features
-- Driver verification via LBPH face recognition (local, no cloud)
-- Drowsiness monitoring with eye-closure detection and audible beeps
-- Email notifications: new driver registration, start driving, drowsiness alert
-- Streamlit UI (register, start driving, list/edit/delete drivers) or CLI
-- Stores driver face samples in SQLite (pickled arrays)
+## 🔥 Key Features
+
+### 👤 **Driver Authentication**
+- AI-based facial recognition using LBPH (OpenCV)
+- Secure driver registration system with:
+  - Name validation  
+  - Age verification (18+)  
+  - Unique 6-digit license authentication  
+- Stores face samples directly inside SQLite database
+- Sends email notification whenever a new driver is registered
+
+### 😴 **Real-Time Drowsiness Detection**
+- Detects eye closure using Haar Cascade + EAR logic
+- Triggers alert if eyes stay closed for **3+ seconds**
+- Plays loud beeping warning (Windows compatible)
+- Sends automatic drowsiness alert email with a snapshot
+
+### 🔐 **Vehicle Security**
+- Only verified drivers can start driving
+- Complete event logging and email notifications
+- Unauthorized drivers are immediately blocked & flagged
+
+### 🖥️ **Streamlit Web Dashboard**
+- Register drivers with live camera capture  
+- Start driving mode with verification workflow  
+- Real-time drowsiness monitoring  
+- Edit/Delete drivers directly from the UI  
+- Displays captured face images in the table
+
 
 ## Requirements
 - Python 3.7+ (tested with 3.11)
@@ -24,34 +47,25 @@ Key packages (`requirements.txt`):
 
 Uses OpenCV’s built-in LBPH recognizer (no dlib or deep models).
 
-## Setup
-1) Install deps  
+## ⚙️ Setup
+### 1️⃣ Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-2) Configure email (do NOT commit secrets)  
+### 2️⃣ Configure email 
 - Copy `config.example.json` to `config.json` and fill in SMTP settings.  
 - For Gmail: create an App Password and use it as `sender_password`.
 
-3) (Optional) Ignore local data  
-Create `.gitignore` (example):
-```
-config.json
-drivers.db
-registered_drivers/
-drowsy_events/
-__pycache__/
-*.pyc
-```
 
-## Running
-### CLI
+
+## 🚀 Running the System
+### 🖥️ Run CLI Version
 ```bash
 python main.py
 ```
 
-### Streamlit UI
+### 🌐 Run Streamlit App
 ```bash
 streamlit run app.py
 ```
