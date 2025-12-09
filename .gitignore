@@ -1,0 +1,25 @@
+config.json
+drivers.db
+registered_drivers/
+drowsy_events/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db-journal
+.DS_Store
+Thumbs.db
+# Python
+__pycache__/
+*.pyc
+
+# Database
+*.db
+
+driver_images/
+
+# Config/Sensitive
+config.json
+
+# Streamlit state
+.streamlit/
