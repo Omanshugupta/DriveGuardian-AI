@@ -1,4 +1,4 @@
-# 🚗 DriveGuardian-AI
+# 🚗 Driver Drowsiness Detection & Security System
 
 Python-based driver authentication and drowsiness detection for safer driving. Runs as a CLI or Streamlit app using OpenCV LBPH face recognition, Haar cascades for eye detection, and email alerts.
 
